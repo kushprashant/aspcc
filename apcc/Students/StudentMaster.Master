@@ -1,0 +1,107 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="StudentMaster.master.cs" Inherits="apcc.Students.StudentMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %></title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+        <link href="../admin/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="css/stdcss.css" rel="stylesheet" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <!-- jQuery 2.2.3 -->
+    <script src="../admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="../admin/bootstrap/js/bootstrap.min.js"></script>
+  
+    <style>
+        #lblStudentName { float: right; font-size: 20px; margin-top: 10px;color: white;}
+        .navright {    float: right!important;
+        }
+    </style>
+    <script type="text/javascript">
+        function logout() {
+            $("#btnSignout").click();
+        }
+    </script>
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+               
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+          <script src="../admin/plugins/datatables/jquery.dataTables.min.js"></script>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <ul>
+                        <li class="dropdown user user-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                      <a class="navbar-brand" runat="server" href="~/Students/Dashboard">APURVA STAR PULSE COMPUTER CLASSES</a>
+                                </a>
+                                <ul class="dropdown-menu">
+                                 
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                     <div class="pull-right">
+                                            <asp:Button runat="server" ID="btnSignout" ClientIDMode="Static" Text="Sign out" onclick="btnSignout_Click" class="btn btn-default btn-flat"/>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                    </ul>
+                  
+                </div>
+                <div class="navbar-collapse collapse">
+                     <ul class="navright nav navbar-nav">
+                        <li>  <asp:Label Text="text" ID="lblStudentName" runat="server" /></li>
+                        <li><a runat="server" onclick="logout()" class="btn"  id="linkLogut" >Log Out</a></li>
+                    </ul>
+                  
+                   
+                </div>
+                
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - APURVA STAR PULSE COMPUTER CLASSES</p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
+

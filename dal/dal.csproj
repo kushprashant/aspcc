@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7EFAD1B9-A4DB-48F3-969B-003E9F97AEBF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>dal</RootNamespace>
+    <AssemblyName>dal</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DalAdminssionOpration.cs" />
+    <Compile Include="DalComman.cs" />
+    <Compile Include="Dallcourseopration.cs" />
+    <Compile Include="Dallexamopration.cs" />
+    <Compile Include="DallStudentOpration.cs" />
+    <Compile Include="edmx\Admission.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\Area.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\aspccDal.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>aspccDal.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\aspccDal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\aspccDal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>aspccDal.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DalInquiryOptation.cs" />
+    <Compile Include="edmx\ChkExamFinish_Result.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\City.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\Course.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\Exam.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\ExamQuestionOp.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\getAdmissionById_Result.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\getAdmissionList_Result.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\getCourseById_Result.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\getCourseList_Result.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\getexamById_Result.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\getexamList_Result.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\getExamQuestionByExamId_Result.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\getExamQuestionListByExamId_Result.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\getExamQuestionListByExamQuestionId_Result.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\getInquiryById_Result.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\getInquiryList_Result.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\GetStdExamDetailsById_Result.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\GetStdUPdateQuestionAnswereById_Result.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\getStudentexamById_Result.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\getStudentExamResultbyStdExamId_Result.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\Inquiry.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\InsertExamStudentAttemptBystdId_Result.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\State.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\StudentExam.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\StudentExamDetail.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\User.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edmx\viewResultByStdId_Result.cs">
+      <DependentUpon>aspccDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="edmx\aspccDal.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>aspccDal.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="edmx\aspccDal.edmx.diagram">
+      <DependentUpon>aspccDal.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="edmx\aspccDal.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>aspccDal.edmx</DependentUpon>
+      <LastGenOutput>aspccDal.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="edmx\aspccDal.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>aspccDal.edmx</DependentUpon>
+      <LastGenOutput>aspccDal.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bal\bal.csproj">
+      <Project>{f5a88287-4ecc-4436-be3e-c7f161c2538c}</Project>
+      <Name>bal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

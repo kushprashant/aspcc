@@ -1,0 +1,1727 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="aspccModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdmissionDate" Type="datetime" Nullable="false" />
+          <Property Name="JoinDate" Type="datetime" Nullable="false" />
+          <Property Name="fname" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Mname" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Lname" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="MobileH" Type="nvarchar" MaxLength="15" />
+          <Property Name="MobileF" Type="nvarchar" MaxLength="15" />
+          <Property Name="MobileP" Type="nvarchar" MaxLength="15" />
+          <Property Name="Email" Type="nvarchar" MaxLength="250" />
+          <Property Name="AreId" Type="int" />
+          <Property Name="QualificationId" Type="nvarchar" MaxLength="50" />
+          <Property Name="StreamId" Type="int" />
+          <Property Name="OccupationId" Type="int" />
+          <Property Name="CourseId" Type="nvarchar" MaxLength="500" />
+          <Property Name="SchoolName" Type="nvarchar" MaxLength="150" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="PreferTimeTO" Type="nvarchar" MaxLength="10" />
+          <Property Name="PreferTimeFrom" Type="nvarchar" MaxLength="10" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+          <Property Name="TotalFees" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DisCount" Type="int" />
+          <Property Name="NetFees" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="NoOfInstallment" Type="int" />
+          <Property Name="Installment1Rs" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Installment1Date" Type="datetime" />
+          <Property Name="Installment2Rs" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Installment2Date" Type="datetime" />
+          <Property Name="Installment3Rs" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Installment3Date" Type="datetime" />
+          <Property Name="Installment4Rs" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Installment4Date" Type="datetime" />
+          <Property Name="Installment5Rs" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Installment5Date" Type="datetime" />
+          <Property Name="Installment6Rs" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Installment6Date" Type="datetime" />
+          <Property Name="Installment7Rs" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Installment7Date" Type="datetime" />
+          <Property Name="Installment8Rs" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Installment8Date" Type="datetime" />
+          <Property Name="Installment9Rs" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Installment9Date" Type="datetime" />
+          <Property Name="Installment10Rs" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Installment10Date" Type="datetime" />
+          <Property Name="EntDt" Type="datetime" />
+          <Property Name="EntBy" Type="int" />
+          <Property Name="ModDt" Type="datetime" />
+          <Property Name="ModBy" Type="int" />
+          <Property Name="AdmissionNo" Type="nvarchar" MaxLength="15" />
+          <Property Name="isdelete" Type="bit" />
+          <Property Name="RegNo" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'aspcc.dbo.Area' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="CityId" />
+            <PropertyRef Name="AreaName" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="CityId" Type="int" Nullable="false" />
+          <Property Name="AreaName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="StateId" Type="int" Nullable="false" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CourseName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fee" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Duration" Type="int" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="EntDate" Type="datetime" />
+          <Property Name="EntBy" Type="int" />
+          <Property Name="ModDate" Type="datetime" />
+          <Property Name="ModBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Exam">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CoruserId" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="noofQestion" Type="int" Nullable="false" />
+          <Property Name="Isactive" Type="bit" Nullable="false" />
+          <Property Name="IsDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ExamQuestionOp">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExamId" Type="int" Nullable="false" />
+          <Property Name="Question" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Option1" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Option2" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Option3" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Option4" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="CorrectAns" Type="smallint" Nullable="false" />
+          <Property Name="IsDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Inquiry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="lname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CourseID" Type="nvarchar" MaxLength="500" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="100" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="15" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="AreaId" Type="int" Nullable="false" />
+          <Property Name="City" Type="int" />
+          <Property Name="PreferTimeTO" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="PreferTimeFrom" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Final" Type="bit" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="500" />
+          <Property Name="EntDt" Type="datetime" />
+          <Property Name="EntBy" Type="int" />
+          <Property Name="ModDt" Type="datetime" />
+          <Property Name="ModBy" Type="int" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'aspcc.dbo.State' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="CountyId" />
+            <PropertyRef Name="StataName" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="CountyId" Type="int" Nullable="false" />
+          <Property Name="StataName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StudentExam">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentId" Type="int" Nullable="false" />
+          <Property Name="ExamId" Type="int" Nullable="false" />
+          <Property Name="IsExamFinish" Type="bit" Nullable="false" />
+          <Property Name="EntDt" Type="datetime" Nullable="false" />
+          <Property Name="EntBy" Type="int" Nullable="false" />
+          <Property Name="ModDt" Type="datetime" Nullable="false" />
+          <Property Name="ModBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StudentExamDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentExamId" Type="int" Nullable="false" />
+          <Property Name="QuestionId" Type="int" Nullable="false" />
+          <Property Name="Answer" Type="int" Nullable="false" />
+          <Property Name="EntDt" Type="datetime" Nullable="false" />
+          <Property Name="ModDt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserType" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PassWord" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ExamQuestionOp_Exam">
+          <End Role="Exam" Type="Self.Exam" Multiplicity="1" />
+          <End Role="ExamQuestionOp" Type="Self.ExamQuestionOp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Exam">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExamQuestionOp">
+              <PropertyRef Name="ExamId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="ChkExamFinish" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StudentId" Type="int" Mode="In" />
+          <Parameter Name="ExamId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ChkStdExamAvalable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StudentId" Type="int" Mode="In" />
+          <Parameter Name="ExamId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CourseInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="CourseName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Fee" Type="decimal" Mode="In" />
+          <Parameter Name="Duration" Type="int" Mode="In" />
+          <Parameter Name="Active" Type="bit" Mode="In" />
+          <Parameter Name="EntBy" Type="int" Mode="In" />
+          <Parameter Name="ModBy" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DataBaseBackUp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="DeleteAdmission" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DeleteCourse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DeleteExam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DeleteInquiry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ExamCopyQuestion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fromExamid" Type="int" Mode="In" />
+          <Parameter Name="toExamId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ExamInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="CoruserId" Type="int" Mode="In" />
+          <Parameter Name="ExamName" Type="nvarchar" Mode="In" />
+          <Parameter Name="noofQestion" Type="int" Mode="In" />
+          <Parameter Name="Active" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="ExamQuestionInsertUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="ExamId" Type="int" Mode="In" />
+          <Parameter Name="Question" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Option1" Type="nvarchar" Mode="In" />
+          <Parameter Name="Option2" Type="nvarchar" Mode="In" />
+          <Parameter Name="Option3" Type="nvarchar" Mode="In" />
+          <Parameter Name="Option4" Type="nvarchar" Mode="In" />
+          <Parameter Name="CorrectAns" Type="smallint" Mode="In" />
+        </Function>
+        <Function Name="getAdmissionById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getAdmissionList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getCourseById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getCourseList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getexamById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getexamList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getExamQuestionListByExamId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ExamId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getExamQuestionListByExamQuestionId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ExamId" Type="int" Mode="In" />
+          <Parameter Name="QuestionId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getInquiryById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getInquiryList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetStdExamDetailsById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StudentExamId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetStdUPdateQuestionAnswereById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StudentExamDetailsId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getStudentexamById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StudentId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getStudentExamResultbyStdExamId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="InsertExamStudentAttemptBystdId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="StudentId" Type="int" Mode="In" />
+          <Parameter Name="ExamId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="InsertLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Error" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="url" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="methodName" Type="nvarchar" Mode="In" />
+          <Parameter Name="InnerMessage" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="InsertUpdateAdmission" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="fname" Type="nvarchar" Mode="In" />
+          <Parameter Name="Mname" Type="nvarchar" Mode="In" />
+          <Parameter Name="Lname" Type="nvarchar" Mode="In" />
+          <Parameter Name="Address" Type="nvarchar" Mode="In" />
+          <Parameter Name="MobileH" Type="nvarchar" Mode="In" />
+          <Parameter Name="MobileF" Type="nvarchar" Mode="In" />
+          <Parameter Name="MobileP" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="AreId" Type="int" Mode="In" />
+          <Parameter Name="QualificationId" Type="nvarchar" Mode="In" />
+          <Parameter Name="StreamId" Type="int" Mode="In" />
+          <Parameter Name="OccupationId" Type="int" Mode="In" />
+          <Parameter Name="CourseId" Type="nvarchar" Mode="In" />
+          <Parameter Name="SchoolName" Type="nvarchar" Mode="In" />
+          <Parameter Name="BirthDate" Type="datetime" Mode="In" />
+          <Parameter Name="PreferTimeTO" Type="nvarchar" Mode="In" />
+          <Parameter Name="PreferTimeFrom" Type="nvarchar" Mode="In" />
+          <Parameter Name="Remark" Type="nvarchar" Mode="In" />
+          <Parameter Name="TotalFees" Type="decimal" Mode="In" />
+          <Parameter Name="DisCount" Type="int" Mode="In" />
+          <Parameter Name="NetFees" Type="decimal" Mode="In" />
+          <Parameter Name="NoOfInstallment" Type="int" Mode="In" />
+          <Parameter Name="Installment1Rs" Type="decimal" Mode="In" />
+          <Parameter Name="Installment1Date" Type="datetime" Mode="In" />
+          <Parameter Name="Installment2Rs" Type="decimal" Mode="In" />
+          <Parameter Name="Installment2Date" Type="datetime" Mode="In" />
+          <Parameter Name="Installment3Rs" Type="decimal" Mode="In" />
+          <Parameter Name="Installment3Date" Type="datetime" Mode="In" />
+          <Parameter Name="Installment4Rs" Type="decimal" Mode="In" />
+          <Parameter Name="Installment4Date" Type="datetime" Mode="In" />
+          <Parameter Name="Installment5Rs" Type="decimal" Mode="In" />
+          <Parameter Name="Installment5Date" Type="datetime" Mode="In" />
+          <Parameter Name="Installment6Rs" Type="decimal" Mode="In" />
+          <Parameter Name="Installment6Date" Type="datetime" Mode="In" />
+          <Parameter Name="Installment7Rs" Type="decimal" Mode="In" />
+          <Parameter Name="Installment7Date" Type="datetime" Mode="In" />
+          <Parameter Name="Installment8Rs" Type="decimal" Mode="In" />
+          <Parameter Name="Installment8Date" Type="datetime" Mode="In" />
+          <Parameter Name="Installment9Rs" Type="decimal" Mode="In" />
+          <Parameter Name="Installment9Date" Type="datetime" Mode="In" />
+          <Parameter Name="Installment10Rs" Type="decimal" Mode="In" />
+          <Parameter Name="Installment10Date" Type="datetime" Mode="In" />
+          <Parameter Name="ModBy" Type="int" Mode="In" />
+          <Parameter Name="AdmissionNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="RegNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="AdmissionDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="InsertUpdateInquiry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="fname" Type="nvarchar" Mode="In" />
+          <Parameter Name="lname" Type="nvarchar" Mode="In" />
+          <Parameter Name="CourseID" Type="nvarchar" Mode="In" />
+          <Parameter Name="EmailId" Type="nvarchar" Mode="In" />
+          <Parameter Name="Mobile" Type="nvarchar" Mode="In" />
+          <Parameter Name="Address" Type="nvarchar" Mode="In" />
+          <Parameter Name="AreaId" Type="int" Mode="In" />
+          <Parameter Name="City" Type="int" Mode="In" />
+          <Parameter Name="PreferTimeTO" Type="nvarchar" Mode="In" />
+          <Parameter Name="PreferTimeFrom" Type="nvarchar" Mode="In" />
+          <Parameter Name="Final" Type="bit" Mode="In" />
+          <Parameter Name="Notes" Type="nvarchar" Mode="In" />
+          <Parameter Name="EntBy" Type="int" Mode="In" />
+          <Parameter Name="ModBy" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateQuestionAnswere" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StudentExamDetailsId" Type="int" Mode="In" />
+          <Parameter Name="StudentExamId" Type="int" Mode="In" />
+          <Parameter Name="QuestionId" Type="int" Mode="In" />
+          <Parameter Name="Answer" Type="int" Mode="In" />
+        </Function>
+        <Function Name="updateStudentExam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="StudentId" Type="int" Mode="In" />
+          <Parameter Name="ExamId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="viewResultByStdId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StudentId" Type="int" Mode="In" />
+          <Parameter Name="examId" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="aspccModelStoreContainer">
+          <EntitySet Name="Admission" EntityType="Self.Admission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Exam" EntityType="Self.Exam" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExamQuestionOp" EntityType="Self.ExamQuestionOp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inquiry" EntityType="Self.Inquiry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentExam" EntityType="Self.StudentExam" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentExamDetails" EntityType="Self.StudentExamDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Area" EntityType="Self.Area" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Area].[Id] AS [Id], 
+    [Area].[CityId] AS [CityId], 
+    [Area].[AreaName] AS [AreaName]
+    FROM [dbo].[Area] AS [Area]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="State" EntityType="Self.State" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [State].[Id] AS [Id], 
+    [State].[CountyId] AS [CountyId], 
+    [State].[StataName] AS [StataName]
+    FROM [dbo].[State] AS [State]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_ExamQuestionOp_Exam" Association="Self.FK_ExamQuestionOp_Exam">
+            <End Role="Exam" EntitySet="Exam" />
+            <End Role="ExamQuestionOp" EntitySet="ExamQuestionOp" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="aspccModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="aspccEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Courses" EntityType="aspccModel.Course" />
+          <FunctionImport Name="CourseInsertUpdate" ReturnType="Collection(Int32)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="CourseName" Mode="In" Type="String" />
+            <Parameter Name="Fee" Mode="In" Type="Decimal" />
+            <Parameter Name="Duration" Mode="In" Type="Int32" />
+            <Parameter Name="Active" Mode="In" Type="Boolean" />
+            <Parameter Name="EntBy" Mode="In" Type="Int32" />
+            <Parameter Name="ModBy" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteCourse">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getCourseById" ReturnType="Collection(aspccModel.getCourseById_Result)">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getCourseList" ReturnType="Collection(aspccModel.getCourseList_Result)" />
+          <EntitySet Name="Cities" EntityType="aspccModel.City" />
+          <EntitySet Name="States" EntityType="aspccModel.State" />
+          <EntitySet Name="Areas" EntityType="aspccModel.Area" />
+          <FunctionImport Name="getInquiryById" ReturnType="Collection(aspccModel.getInquiryById_Result)">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getInquiryList" ReturnType="Collection(aspccModel.getInquiryList_Result)" />
+          <FunctionImport Name="InsertUpdateInquiry" ReturnType="Collection(Int32)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="fname" Mode="In" Type="String" />
+            <Parameter Name="lname" Mode="In" Type="String" />
+            <Parameter Name="CourseID" Mode="In" Type="String" />
+            <Parameter Name="EmailId" Mode="In" Type="String" />
+            <Parameter Name="Mobile" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="AreaId" Mode="In" Type="Int32" />
+            <Parameter Name="City" Mode="In" Type="Int32" />
+            <Parameter Name="PreferTimeTO" Mode="In" Type="String" />
+            <Parameter Name="PreferTimeFrom" Mode="In" Type="String" />
+            <Parameter Name="Final" Mode="In" Type="Boolean" />
+            <Parameter Name="Notes" Mode="In" Type="String" />
+            <Parameter Name="EntBy" Mode="In" Type="Int32" />
+            <Parameter Name="ModBy" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getAdmissionById" ReturnType="Collection(aspccModel.getAdmissionById_Result)">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getAdmissionList" ReturnType="Collection(aspccModel.getAdmissionList_Result)" />
+          <EntitySet Name="Users" EntityType="aspccModel.User" />
+          <FunctionImport Name="DeleteInquiry">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="InsertUpdateAdmission" ReturnType="Collection(Decimal)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="fname" Mode="In" Type="String" />
+            <Parameter Name="Mname" Mode="In" Type="String" />
+            <Parameter Name="Lname" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="MobileH" Mode="In" Type="String" />
+            <Parameter Name="MobileF" Mode="In" Type="String" />
+            <Parameter Name="MobileP" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="AreId" Mode="In" Type="Int32" />
+            <Parameter Name="QualificationId" Mode="In" Type="String" />
+            <Parameter Name="StreamId" Mode="In" Type="Int32" />
+            <Parameter Name="OccupationId" Mode="In" Type="Int32" />
+            <Parameter Name="CourseId" Mode="In" Type="String" />
+            <Parameter Name="SchoolName" Mode="In" Type="String" />
+            <Parameter Name="BirthDate" Mode="In" Type="DateTime" />
+            <Parameter Name="PreferTimeTO" Mode="In" Type="String" />
+            <Parameter Name="PreferTimeFrom" Mode="In" Type="String" />
+            <Parameter Name="Remark" Mode="In" Type="String" />
+            <Parameter Name="TotalFees" Mode="In" Type="Decimal" />
+            <Parameter Name="DisCount" Mode="In" Type="Int32" />
+            <Parameter Name="NetFees" Mode="In" Type="Decimal" />
+            <Parameter Name="NoOfInstallment" Mode="In" Type="Int32" />
+            <Parameter Name="Installment1Rs" Mode="In" Type="Decimal" />
+            <Parameter Name="Installment1Date" Mode="In" Type="DateTime" />
+            <Parameter Name="Installment2Rs" Mode="In" Type="Decimal" />
+            <Parameter Name="Installment2Date" Mode="In" Type="DateTime" />
+            <Parameter Name="Installment3Rs" Mode="In" Type="Decimal" />
+            <Parameter Name="Installment3Date" Mode="In" Type="DateTime" />
+            <Parameter Name="Installment4Rs" Mode="In" Type="Decimal" />
+            <Parameter Name="Installment4Date" Mode="In" Type="DateTime" />
+            <Parameter Name="Installment5Rs" Mode="In" Type="Decimal" />
+            <Parameter Name="Installment5Date" Mode="In" Type="DateTime" />
+            <Parameter Name="Installment6Rs" Mode="In" Type="Decimal" />
+            <Parameter Name="Installment6Date" Mode="In" Type="DateTime" />
+            <Parameter Name="Installment7Rs" Mode="In" Type="Decimal" />
+            <Parameter Name="Installment7Date" Mode="In" Type="DateTime" />
+            <Parameter Name="Installment8Rs" Mode="In" Type="Decimal" />
+            <Parameter Name="Installment8Date" Mode="In" Type="DateTime" />
+            <Parameter Name="Installment9Rs" Mode="In" Type="Decimal" />
+            <Parameter Name="Installment9Date" Mode="In" Type="DateTime" />
+            <Parameter Name="Installment10Rs" Mode="In" Type="Decimal" />
+            <Parameter Name="Installment10Date" Mode="In" Type="DateTime" />
+            <Parameter Name="ModBy" Mode="In" Type="Int32" />
+            <Parameter Name="AdmissionNo" Mode="In" Type="String" />
+            <Parameter Name="RegNo" Mode="In" Type="String" />
+            <Parameter Name="AdmissionDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteAdmission">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="InsertLog">
+            <Parameter Name="Error" Mode="In" Type="String" />
+            <Parameter Name="url" Mode="In" Type="String" />
+            <Parameter Name="methodName" Mode="In" Type="String" />
+            <Parameter Name="InnerMessage" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Inquiries" EntityType="aspccModel.Inquiry" />
+          <EntitySet Name="Admissions" EntityType="aspccModel.Admission" />
+          <FunctionImport Name="ExamInsertUpdate" ReturnType="Collection(Decimal)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="CoruserId" Mode="In" Type="Int32" />
+            <Parameter Name="ExamName" Mode="In" Type="String" />
+            <Parameter Name="noofQestion" Mode="In" Type="Int32" />
+            <Parameter Name="Active" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="getexamList" ReturnType="Collection(aspccModel.getexamList_Result)" />
+          <FunctionImport Name="getexamById" ReturnType="Collection(aspccModel.getexamById_Result)">
+          <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteExam">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ExamQuestionInsertUpdate" ReturnType="Collection(Decimal)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="ExamId" Mode="In" Type="Int32" />
+            <Parameter Name="Question" Mode="In" Type="String" />
+            <Parameter Name="Option1" Mode="In" Type="String" />
+            <Parameter Name="Option2" Mode="In" Type="String" />
+            <Parameter Name="Option3" Mode="In" Type="String" />
+            <Parameter Name="Option4" Mode="In" Type="String" />
+            <Parameter Name="CorrectAns" Mode="In" Type="Int16" />
+          </FunctionImport>
+          <EntitySet Name="Exams" EntityType="aspccModel.Exam" />
+          <EntitySet Name="ExamQuestionOps" EntityType="aspccModel.ExamQuestionOp" />
+          <AssociationSet Name="FK_ExamQuestionOp_Exam" Association="aspccModel.FK_ExamQuestionOp_Exam">
+            <End Role="Exam" EntitySet="Exams" />
+            <End Role="ExamQuestionOp" EntitySet="ExamQuestionOps" />
+          </AssociationSet>
+          <FunctionImport Name="getExamQuestionByExamId" ReturnType="Collection(aspccModel.getExamQuestionByExamId_Result)">
+            <Parameter Name="ExamId" Type="Int32" Mode="In" />
+          </FunctionImport>
+          <FunctionImport Name="getExamQuestionListByExamQuestionId" ReturnType="Collection(aspccModel.getExamQuestionListByExamQuestionId_Result)">
+            <Parameter Name="ExamId" Mode="In" Type="Int32" />
+            <Parameter Name="QuestionId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getStudentexamById" ReturnType="Collection(aspccModel.getStudentexamById_Result)">
+          <Parameter Name="StudentId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="StudentExams" EntityType="aspccModel.StudentExam" />
+          <EntitySet Name="StudentExamDetails" EntityType="aspccModel.StudentExamDetail" />
+          <FunctionImport Name="ChkStdExamAvalable" ReturnType="Collection(Int32)">
+            <Parameter Name="StudentId" Mode="In" Type="Int32" />
+            <Parameter Name="ExamId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetStdExamDetailsById" ReturnType="Collection(aspccModel.GetStdExamDetailsById_Result)">
+          <Parameter Name="StudentExamId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="InsertExamStudentAttemptBystdId" ReturnType="Collection(aspccModel.InsertExamStudentAttemptBystdId_Result)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="StudentId" Mode="In" Type="Int32" />
+            <Parameter Name="ExamId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ChkExamFinish" ReturnType="Collection(aspccModel.ChkExamFinish_Result)">
+            <Parameter Name="StudentId" Mode="In" Type="Int32" />
+            <Parameter Name="ExamId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateQuestionAnswere">
+            <Parameter Name="StudentExamDetailsId" Mode="In" Type="Int32" />
+            <Parameter Name="StudentExamId" Mode="In" Type="Int32" />
+            <Parameter Name="QuestionId" Mode="In" Type="Int32" />
+            <Parameter Name="Answer" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetStdUPdateQuestionAnswereById" ReturnType="Collection(aspccModel.GetStdUPdateQuestionAnswereById_Result)">
+          <Parameter Name="StudentExamDetailsId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getStudentExamResultbyStdExamId" ReturnType="Collection(aspccModel.getStudentExamResultbyStdExamId_Result)">
+          <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="updateStudentExam">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="StudentId" Mode="In" Type="Int32" />
+            <Parameter Name="ExamId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="viewResultByStdId" ReturnType="Collection(aspccModel.viewResultByStdId_Result)">
+            <Parameter Name="StudentId" Mode="In" Type="Int32" />
+            <Parameter Name="examId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ExamCopyQuestion">
+            <Parameter Name="fromExamid" Mode="In" Type="Int32" />
+            <Parameter Name="toExamId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DataBaseBackUp" />
+          <FunctionImport Name="getExamQuestionListByExamId" ReturnType="Collection(aspccModel.getExamQuestionListByExamId_Result)">
+            <Parameter Name="ExamId" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CourseName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fee" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Duration" Type="Int32" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="EntDate" Type="DateTime" Precision="3" />
+          <Property Name="EntBy" Type="Int32" />
+          <Property Name="ModDate" Type="DateTime" Precision="3" />
+          <Property Name="ModBy" Type="Int32" Nullable="false" />
+          <Property Name="IsDelete" Type="Boolean" />
+        </EntityType>
+        <ComplexType Name="getCourseById_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="CourseName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+          <Property Type="Decimal" Name="Fee" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="Duration" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="getCourseList_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="CourseName" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="Fee" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="Duration" Nullable="true" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+          <Property Type="String" Name="ActtiveText" Nullable="false" MaxLength="8" />
+          <Property Type="DateTime" Name="EntDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="EntBy" Nullable="true" />
+          <Property Type="DateTime" Name="ModDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="ModBy" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="StateId" Type="Int32" Nullable="false" />
+          <Property Name="CityName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="CountyId" />
+            <PropertyRef Name="StataName" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CountyId" Type="Int32" Nullable="false" />
+          <Property Name="StataName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="CityId" />
+            <PropertyRef Name="AreaName" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CityId" Type="Int32" Nullable="false" />
+          <Property Name="AreaName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="getInquiryById_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="fname" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="lname" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="CourseID" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="EmailId" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Mobile" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="AreaId" Nullable="false" />
+          <Property Type="Int32" Name="City" Nullable="true" />
+          <Property Type="String" Name="PreferTimeTO" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="PreferTimeFrom" Nullable="false" MaxLength="10" />
+          <Property Type="Boolean" Name="Final" Nullable="true" />
+          <Property Type="String" Name="Notes" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="EntDt" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="EntBy" Nullable="true" />
+          <Property Type="DateTime" Name="ModDt" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="ModBy" Nullable="true" />
+          <Property Type="String" Name="InquiryDate_S" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="getInquiryList_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="fname" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="lname" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="CourseID" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="EmailId" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Mobile" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="AreaId" Nullable="false" />
+          <Property Type="Int32" Name="City" Nullable="true" />
+          <Property Type="String" Name="PreferTimeTO" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="PreferTimeFrom" Nullable="false" MaxLength="10" />
+          <Property Type="Boolean" Name="Final" Nullable="true" />
+          <Property Type="String" Name="Notes" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="EntDt" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="EntBy" Nullable="true" />
+          <Property Type="DateTime" Name="ModDt" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="ModBy" Nullable="true" />
+          <Property Type="String" Name="CourseName" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="InquiryDate_S" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="getAdmissionById_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="fname" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Mname" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Lname" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="MobileH" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="MobileF" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="MobileP" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="250" />
+          <Property Type="Int32" Name="AreId" Nullable="true" />
+          <Property Type="String" Name="QualificationId" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="StreamId" Nullable="true" />
+          <Property Type="Int32" Name="OccupationId" Nullable="true" />
+          <Property Type="String" Name="CourseId" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="SchoolName" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="BirthDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="PreferTimeTO" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="PreferTimeFrom" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="TotalFees" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="DisCount" Nullable="true" />
+          <Property Type="Decimal" Name="NetFees" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="NoOfInstallment" Nullable="true" />
+          <Property Type="Decimal" Name="Installment1Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment1Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Installment2Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment2Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Installment3Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment3Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Installment4Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment4Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Installment5Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment5Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Installment6Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment6Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Installment7Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment7Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Installment8Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment8Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Installment9Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment9Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Installment10Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment10Date" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="EntDt" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="EntBy" Nullable="true" />
+          <Property Type="DateTime" Name="ModDt" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="ModBy" Nullable="true" />
+          <Property Type="String" Name="BirthDate_S" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Installment1Date_S" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Installment2Date_S" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Installment3Date_S" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Installment4Date_S" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Installment5Date_S" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Installment6Date_S" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Installment7Date_S" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Installment8Date_S" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Installment9Date_S" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Installment10Date_S" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Area" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="CourseName" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Occupation" Nullable="true" MaxLength="9" />
+          <Property Type="String" Name="Stream" Nullable="true" MaxLength="8" />
+          <Property Type="String" Name="AdmissionNo" Nullable="false" MaxLength="15" />
+          <Property Type="DateTime" Name="AdmissionDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="AdmissionDate_S" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="Age" Nullable="true" />
+          <Property Type="String" Name="RegNo" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Installment1RsInWord" Nullable="true" MaxLength="1029" />
+          <Property Type="String" Name="Installment2RsInWord" Nullable="true" MaxLength="1029" />
+          <Property Type="String" Name="Installment3RsInWord" Nullable="true" MaxLength="1029" />
+          <Property Type="String" Name="Installmen4RsInWord" Nullable="true" MaxLength="1029" />
+          <Property Type="String" Name="Installment5RsInWord" Nullable="true" MaxLength="1029" />
+          <Property Type="String" Name="Installment6RsInWord" Nullable="true" MaxLength="1029" />
+          <Property Type="String" Name="Installment7RsInWord" Nullable="true" MaxLength="1029" />
+          <Property Type="String" Name="Installment8RsInWord" Nullable="true" MaxLength="1029" />
+          <Property Type="String" Name="Installment9RsInWord" Nullable="true" MaxLength="1029" />
+          <Property Type="String" Name="Installment10RsInWord" Nullable="true" MaxLength="1029" />
+        </ComplexType>
+        <ComplexType Name="getAdmissionList_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="fname" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Mname" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Lname" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="MobileH" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="MobileF" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="MobileP" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="250" />
+          <Property Type="Int32" Name="AreId" Nullable="true" />
+          <Property Type="String" Name="QualificationId" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="StreamId" Nullable="true" />
+          <Property Type="Int32" Name="OccupationId" Nullable="true" />
+          <Property Type="String" Name="CourseId" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="SchoolName" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="BirthDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="PreferTimeTO" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="PreferTimeFrom" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="TotalFees" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="DisCount" Nullable="true" />
+          <Property Type="Decimal" Name="NetFees" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="NoOfInstallment" Nullable="true" />
+          <Property Type="Decimal" Name="Installment1Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment1Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Installment2Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment2Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Installment3Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment3Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Installment4Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment4Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Installment5Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment5Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Installment6Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment6Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Installment7Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment7Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Installment8Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment8Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Installment9Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment9Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Installment10Rs" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Installment10Date" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="EntDt" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="EntBy" Nullable="true" />
+          <Property Type="DateTime" Name="ModDt" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="ModBy" Nullable="true" />
+          <Property Type="String" Name="CourseName" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="BirthDate_S" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="AdmissionNo" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="RegNo" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="FeesRemain" Nullable="true" Precision="28" Scale="2" />
+        </ComplexType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserType" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PassWord" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Inquiry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CourseID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EmailId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AreaId" Type="Int32" Nullable="false" />
+          <Property Name="City" Type="Int32" />
+          <Property Name="PreferTimeTO" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PreferTimeFrom" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Final" Type="Boolean" />
+          <Property Name="Notes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EntDt" Type="DateTime" Precision="3" />
+          <Property Name="EntBy" Type="Int32" />
+          <Property Name="ModDt" Type="DateTime" Precision="3" />
+          <Property Name="ModBy" Type="Int32" />
+          <Property Name="IsDelete" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Admission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdmissionDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="JoinDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="fname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Mname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Lname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MobileH" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="MobileF" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="MobileP" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="AreId" Type="Int32" />
+          <Property Name="QualificationId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StreamId" Type="Int32" />
+          <Property Name="OccupationId" Type="Int32" />
+          <Property Name="CourseId" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SchoolName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="PreferTimeTO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PreferTimeFrom" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TotalFees" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DisCount" Type="Int32" />
+          <Property Name="NetFees" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="NoOfInstallment" Type="Int32" />
+          <Property Name="Installment1Rs" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Installment1Date" Type="DateTime" Precision="3" />
+          <Property Name="Installment2Rs" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Installment2Date" Type="DateTime" Precision="3" />
+          <Property Name="Installment3Rs" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Installment3Date" Type="DateTime" Precision="3" />
+          <Property Name="Installment4Rs" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Installment4Date" Type="DateTime" Precision="3" />
+          <Property Name="Installment5Rs" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Installment5Date" Type="DateTime" Precision="3" />
+          <Property Name="Installment6Rs" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Installment6Date" Type="DateTime" Precision="3" />
+          <Property Name="Installment7Rs" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Installment7Date" Type="DateTime" Precision="3" />
+          <Property Name="Installment8Rs" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Installment8Date" Type="DateTime" Precision="3" />
+          <Property Name="Installment9Rs" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Installment9Date" Type="DateTime" Precision="3" />
+          <Property Name="Installment10Rs" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Installment10Date" Type="DateTime" Precision="3" />
+          <Property Name="EntDt" Type="DateTime" Precision="3" />
+          <Property Name="EntBy" Type="Int32" />
+          <Property Name="ModDt" Type="DateTime" Precision="3" />
+          <Property Name="ModBy" Type="Int32" />
+          <Property Name="AdmissionNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="isdelete" Type="Boolean" />
+          <Property Name="RegNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="getexamList_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="250" />
+          <Property Type="Int32" Name="noofQestion" Nullable="false" />
+          <Property Type="String" Name="ActtiveText" Nullable="false" MaxLength="8" />
+        </ComplexType>
+        <ComplexType Name="getexamById_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="250" />
+          <Property Type="Int32" Name="noofQestion" Nullable="false" />
+          <Property Type="Boolean" Name="Isactive" Nullable="false" />
+          <Property Type="String" Name="ActtiveText" Nullable="false" MaxLength="8" />
+          <Property Type="Int32" Name="CoruserId" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="Exam">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="noofQestion" Type="Int32" Nullable="false" />
+          <Property Name="Isactive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ExamQuestionOps" Relationship="aspccModel.FK_ExamQuestionOp_Exam" FromRole="Exam" ToRole="ExamQuestionOp" />
+          <Property Name="CoruserId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ExamQuestionOp">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExamId" Type="Int32" Nullable="false" />
+          <Property Name="Question" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Option1" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Option2" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Option3" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Option4" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CorrectAns" Type="Int16" Nullable="false" />
+          <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Exam" Relationship="aspccModel.FK_ExamQuestionOp_Exam" FromRole="ExamQuestionOp" ToRole="Exam" />
+        </EntityType>
+        <Association Name="FK_ExamQuestionOp_Exam">
+          <End Type="aspccModel.Exam" Role="Exam" Multiplicity="1" />
+          <End Type="aspccModel.ExamQuestionOp" Role="ExamQuestionOp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Exam">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExamQuestionOp">
+              <PropertyRef Name="ExamId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="getExamQuestionByExamId_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="ExamId" Nullable="false" />
+          <Property Type="String" Name="Question" Nullable="false" />
+          <Property Type="String" Name="Option1" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Option2" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Option3" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Option4" Nullable="false" MaxLength="500" />
+          <Property Type="Int16" Name="CorrectAns" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getExamQuestionListByExamQuestionId_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="ExamId" Nullable="false" />
+          <Property Type="String" Name="Question" Nullable="false" />
+          <Property Type="String" Name="Option1" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Option2" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Option3" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Option4" Nullable="false" MaxLength="500" />
+          <Property Type="Int16" Name="CorrectAns" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getStudentexamById_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="CoruserId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="250" />
+          <Property Type="Int32" Name="noofQestion" Nullable="false" />
+          <Property Type="Boolean" Name="Isactive" Nullable="false" />
+          <Property Type="Boolean" Name="IsDelete" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="StudentExam">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentId" Type="Int32" Nullable="false" />
+          <Property Name="ExamId" Type="Int32" Nullable="false" />
+          <Property Name="IsExamFinish" Type="Boolean" Nullable="false" />
+          <Property Name="EntDt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EntBy" Type="Int32" Nullable="false" />
+          <Property Name="ModDt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModBy" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StudentExamDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentExamId" Type="Int32" Nullable="false" />
+          <Property Name="QuestionId" Type="Int32" Nullable="false" />
+          <Property Name="Answer" Type="Int32" Nullable="false" />
+          <Property Name="EntDt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModDt" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <ComplexType Name="GetStdExamDetailsById_Result">
+          <Property Type="String" Name="Question" Nullable="false" />
+          <Property Type="String" Name="Option1" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Option2" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Option3" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Option4" Nullable="false" MaxLength="500" />
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="QuestionId" Nullable="false" />
+          <Property Type="Int32" Name="Answer" Nullable="false" />
+          <Property Type="Int32" Name="ExamId" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="ChkExamFinish_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="StudentId" Nullable="false" />
+          <Property Type="Int32" Name="ExamId" Nullable="false" />
+          <Property Type="Boolean" Name="IsExamFinish" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="InsertExamStudentAttemptBystdId_Result">
+          <Property Type="Int32" Name="StudentExamid" Nullable="true" />
+          <Property Type="Int32" Name="StudentId" Nullable="true" />
+          <Property Type="Int32" Name="ExamId" Nullable="true" />
+          <Property Type="String" Name="ExamName" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="GetStdUPdateQuestionAnswereById_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="QuestionId" Nullable="false" />
+          <Property Type="String" Name="Question" Nullable="false" />
+          <Property Type="String" Name="Option1" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Option2" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Option3" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Option4" Nullable="false" MaxLength="500" />
+          <Property Type="Int32" Name="Answer" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getStudentExamResultbyStdExamId_Result">
+          <Property Type="String" Name="ExamName" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="Question" Nullable="false" />
+          <Property Type="String" Name="Option1" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Option2" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Option3" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Option4" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="CorrectAns" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Answer" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="SCORE" Nullable="false" />
+          <Property Type="DateTime" Name="EntDt" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="ModDt" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="viewResultByStdId_Result">
+          <Property Type="String" Name="CourseName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ExamName" Nullable="false" MaxLength="250" />
+          <Property Type="Int32" Name="StudentExamId" Nullable="false" />
+          <Property Type="Int32" Name="noofQestion" Nullable="false" />
+          <Property Type="String" Name="EntDt" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="ModDt" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="Totalmarks" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="getExamQuestionListByExamId_Result">
+          <Property Type="Int64" Name="RowID" Nullable="true" />
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="ExamId" Nullable="false" />
+          <Property Type="String" Name="Question" Nullable="false" />
+          <Property Type="String" Name="Option1" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Option2" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Option3" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Option4" Nullable="false" MaxLength="500" />
+          <Property Type="Int16" Name="CorrectAnsNo" Nullable="false" />
+          <Property Type="String" Name="CorrectAns" Nullable="true" MaxLength="500" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="aspccModelStoreContainer" CdmEntityContainer="aspccEntities">
+          <EntitySetMapping Name="Courses">
+            <EntityTypeMapping TypeName="aspccModel.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="ModBy" ColumnName="ModBy" />
+                <ScalarProperty Name="ModDate" ColumnName="ModDate" />
+                <ScalarProperty Name="EntBy" ColumnName="EntBy" />
+                <ScalarProperty Name="EntDate" ColumnName="EntDate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="Fee" ColumnName="Fee" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="aspccModel.Course">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="aspccModel.Store.CourseInsertUpdate">
+                  <ScalarProperty Name="ModBy" ParameterName="ModBy" />
+                  <ScalarProperty Name="EntBy" ParameterName="EntBy" />
+                  <ScalarProperty Name="Active" ParameterName="Active" />
+                  <ScalarProperty Name="Duration" ParameterName="Duration" />
+                  <ScalarProperty Name="Fee" ParameterName="Fee" />
+                  <ScalarProperty Name="CourseName" ParameterName="CourseName" />
+                  <ScalarProperty Name="Id" ParameterName="Id" />
+                  <ResultBinding Name="Id" ColumnName="id" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="aspccModel.Store.CourseInsertUpdate">
+                  <ScalarProperty Name="ModBy" ParameterName="ModBy" Version="Current" />
+                  <ScalarProperty Name="EntBy" ParameterName="EntBy" Version="Current" />
+                  <ScalarProperty Name="Active" ParameterName="Active" Version="Current" />
+                  <ScalarProperty Name="Duration" ParameterName="Duration" Version="Current" />
+                  <ScalarProperty Name="Fee" ParameterName="Fee" Version="Current" />
+                  <ScalarProperty Name="CourseName" ParameterName="CourseName" Version="Current" />
+                  <ScalarProperty Name="Id" ParameterName="Id" Version="Current" />
+                  <ResultBinding Name="Id" ColumnName="id" />
+                </UpdateFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="CourseInsertUpdate" FunctionName="aspccModel.Store.CourseInsertUpdate" />
+          <FunctionImportMapping FunctionImportName="DeleteCourse" FunctionName="aspccModel.Store.DeleteCourse" />
+          <FunctionImportMapping FunctionImportName="getCourseById" FunctionName="aspccModel.Store.getCourseById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="aspccModel.getCourseById_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Fee" ColumnName="Fee" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getCourseList" FunctionName="aspccModel.Store.getCourseList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="aspccModel.getCourseList_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="Fee" ColumnName="Fee" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="ActtiveText" ColumnName="ActtiveText" />
+                <ScalarProperty Name="EntDate" ColumnName="EntDate" />
+                <ScalarProperty Name="EntBy" ColumnName="EntBy" />
+                <ScalarProperty Name="ModDate" ColumnName="ModDate" />
+                <ScalarProperty Name="ModBy" ColumnName="ModBy" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="aspccModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="States">
+            <EntityTypeMapping TypeName="aspccModel.State">
+              <MappingFragment StoreEntitySet="State">
+                <ScalarProperty Name="StataName" ColumnName="StataName" />
+                <ScalarProperty Name="CountyId" ColumnName="CountyId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Areas">
+            <EntityTypeMapping TypeName="aspccModel.Area">
+              <MappingFragment StoreEntitySet="Area">
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="getInquiryById" FunctionName="aspccModel.Store.getInquiryById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="aspccModel.getInquiryById_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="PreferTimeTO" ColumnName="PreferTimeTO" />
+                <ScalarProperty Name="PreferTimeFrom" ColumnName="PreferTimeFrom" />
+                <ScalarProperty Name="Final" ColumnName="Final" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="EntDt" ColumnName="EntDt" />
+                <ScalarProperty Name="EntBy" ColumnName="EntBy" />
+                <ScalarProperty Name="ModDt" ColumnName="ModDt" />
+                <ScalarProperty Name="ModBy" ColumnName="ModBy" />
+                <ScalarProperty Name="InquiryDate_S" ColumnName="InquiryDate_S" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getInquiryList" FunctionName="aspccModel.Store.getInquiryList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="aspccModel.getInquiryList_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="PreferTimeTO" ColumnName="PreferTimeTO" />
+                <ScalarProperty Name="PreferTimeFrom" ColumnName="PreferTimeFrom" />
+                <ScalarProperty Name="Final" ColumnName="Final" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="EntDt" ColumnName="EntDt" />
+                <ScalarProperty Name="EntBy" ColumnName="EntBy" />
+                <ScalarProperty Name="ModDt" ColumnName="ModDt" />
+                <ScalarProperty Name="ModBy" ColumnName="ModBy" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="InquiryDate_S" ColumnName="InquiryDate_S" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertUpdateInquiry" FunctionName="aspccModel.Store.InsertUpdateInquiry" />
+          <FunctionImportMapping FunctionImportName="getAdmissionById" FunctionName="aspccModel.Store.getAdmissionById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="aspccModel.getAdmissionById_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="Mname" ColumnName="Mname" />
+                <ScalarProperty Name="Lname" ColumnName="Lname" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="MobileH" ColumnName="MobileH" />
+                <ScalarProperty Name="MobileF" ColumnName="MobileF" />
+                <ScalarProperty Name="MobileP" ColumnName="MobileP" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="AreId" ColumnName="AreId" />
+                <ScalarProperty Name="QualificationId" ColumnName="QualificationId" />
+                <ScalarProperty Name="StreamId" ColumnName="StreamId" />
+                <ScalarProperty Name="OccupationId" ColumnName="OccupationId" />
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+                <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="PreferTimeTO" ColumnName="PreferTimeTO" />
+                <ScalarProperty Name="PreferTimeFrom" ColumnName="PreferTimeFrom" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="TotalFees" ColumnName="TotalFees" />
+                <ScalarProperty Name="DisCount" ColumnName="DisCount" />
+                <ScalarProperty Name="NetFees" ColumnName="NetFees" />
+                <ScalarProperty Name="NoOfInstallment" ColumnName="NoOfInstallment" />
+                <ScalarProperty Name="Installment1Rs" ColumnName="Installment1Rs" />
+                <ScalarProperty Name="Installment1Date" ColumnName="Installment1Date" />
+                <ScalarProperty Name="Installment2Rs" ColumnName="Installment2Rs" />
+                <ScalarProperty Name="Installment2Date" ColumnName="Installment2Date" />
+                <ScalarProperty Name="Installment3Rs" ColumnName="Installment3Rs" />
+                <ScalarProperty Name="Installment3Date" ColumnName="Installment3Date" />
+                <ScalarProperty Name="Installment4Rs" ColumnName="Installment4Rs" />
+                <ScalarProperty Name="Installment4Date" ColumnName="Installment4Date" />
+                <ScalarProperty Name="Installment5Rs" ColumnName="Installment5Rs" />
+                <ScalarProperty Name="Installment5Date" ColumnName="Installment5Date" />
+                <ScalarProperty Name="Installment6Rs" ColumnName="Installment6Rs" />
+                <ScalarProperty Name="Installment6Date" ColumnName="Installment6Date" />
+                <ScalarProperty Name="Installment7Rs" ColumnName="Installment7Rs" />
+                <ScalarProperty Name="Installment7Date" ColumnName="Installment7Date" />
+                <ScalarProperty Name="Installment8Rs" ColumnName="Installment8Rs" />
+                <ScalarProperty Name="Installment8Date" ColumnName="Installment8Date" />
+                <ScalarProperty Name="Installment9Rs" ColumnName="Installment9Rs" />
+                <ScalarProperty Name="Installment9Date" ColumnName="Installment9Date" />
+                <ScalarProperty Name="Installment10Rs" ColumnName="Installment10Rs" />
+                <ScalarProperty Name="Installment10Date" ColumnName="Installment10Date" />
+                <ScalarProperty Name="EntDt" ColumnName="EntDt" />
+                <ScalarProperty Name="EntBy" ColumnName="EntBy" />
+                <ScalarProperty Name="ModDt" ColumnName="ModDt" />
+                <ScalarProperty Name="ModBy" ColumnName="ModBy" />
+                <ScalarProperty Name="BirthDate_S" ColumnName="BirthDate_S" />
+                <ScalarProperty Name="Installment1Date_S" ColumnName="Installment1Date_S" />
+                <ScalarProperty Name="Installment2Date_S" ColumnName="Installment2Date_S" />
+                <ScalarProperty Name="Installment3Date_S" ColumnName="Installment3Date_S" />
+                <ScalarProperty Name="Installment4Date_S" ColumnName="Installment4Date_S" />
+                <ScalarProperty Name="Installment5Date_S" ColumnName="Installment5Date_S" />
+                <ScalarProperty Name="Installment6Date_S" ColumnName="Installment6Date_S" />
+                <ScalarProperty Name="Installment7Date_S" ColumnName="Installment7Date_S" />
+                <ScalarProperty Name="Installment8Date_S" ColumnName="Installment8Date_S" />
+                <ScalarProperty Name="Installment9Date_S" ColumnName="Installment9Date_S" />
+                <ScalarProperty Name="Installment10Date_S" ColumnName="Installment10Date_S" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+                <ScalarProperty Name="Stream" ColumnName="Stream" />
+                <ScalarProperty Name="AdmissionNo" ColumnName="AdmissionNo" />
+                <ScalarProperty Name="AdmissionDate" ColumnName="AdmissionDate" />
+                <ScalarProperty Name="AdmissionDate_S" ColumnName="AdmissionDate_S" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="RegNo" ColumnName="RegNo" />
+                <ScalarProperty Name="Installment1RsInWord" ColumnName="Installment1RsInWord" />
+                <ScalarProperty Name="Installment2RsInWord" ColumnName="Installment2RsInWord" />
+                <ScalarProperty Name="Installment3RsInWord" ColumnName="Installment3RsInWord" />
+                <ScalarProperty Name="Installmen4RsInWord" ColumnName="Installmen4RsInWord" />
+                <ScalarProperty Name="Installment5RsInWord" ColumnName="Installment5RsInWord" />
+                <ScalarProperty Name="Installment6RsInWord" ColumnName="Installment6RsInWord" />
+                <ScalarProperty Name="Installment7RsInWord" ColumnName="Installment7RsInWord" />
+                <ScalarProperty Name="Installment8RsInWord" ColumnName="Installment8RsInWord" />
+                <ScalarProperty Name="Installment9RsInWord" ColumnName="Installment9RsInWord" />
+                <ScalarProperty Name="Installment10RsInWord" ColumnName="Installment10RsInWord" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getAdmissionList" FunctionName="aspccModel.Store.getAdmissionList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="aspccModel.getAdmissionList_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="Mname" ColumnName="Mname" />
+                <ScalarProperty Name="Lname" ColumnName="Lname" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="MobileH" ColumnName="MobileH" />
+                <ScalarProperty Name="MobileF" ColumnName="MobileF" />
+                <ScalarProperty Name="MobileP" ColumnName="MobileP" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="AreId" ColumnName="AreId" />
+                <ScalarProperty Name="QualificationId" ColumnName="QualificationId" />
+                <ScalarProperty Name="StreamId" ColumnName="StreamId" />
+                <ScalarProperty Name="OccupationId" ColumnName="OccupationId" />
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+                <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="PreferTimeTO" ColumnName="PreferTimeTO" />
+                <ScalarProperty Name="PreferTimeFrom" ColumnName="PreferTimeFrom" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="TotalFees" ColumnName="TotalFees" />
+                <ScalarProperty Name="DisCount" ColumnName="DisCount" />
+                <ScalarProperty Name="NetFees" ColumnName="NetFees" />
+                <ScalarProperty Name="NoOfInstallment" ColumnName="NoOfInstallment" />
+                <ScalarProperty Name="Installment1Rs" ColumnName="Installment1Rs" />
+                <ScalarProperty Name="Installment1Date" ColumnName="Installment1Date" />
+                <ScalarProperty Name="Installment2Rs" ColumnName="Installment2Rs" />
+                <ScalarProperty Name="Installment2Date" ColumnName="Installment2Date" />
+                <ScalarProperty Name="Installment3Rs" ColumnName="Installment3Rs" />
+                <ScalarProperty Name="Installment3Date" ColumnName="Installment3Date" />
+                <ScalarProperty Name="Installment4Rs" ColumnName="Installment4Rs" />
+                <ScalarProperty Name="Installment4Date" ColumnName="Installment4Date" />
+                <ScalarProperty Name="Installment5Rs" ColumnName="Installment5Rs" />
+                <ScalarProperty Name="Installment5Date" ColumnName="Installment5Date" />
+                <ScalarProperty Name="Installment6Rs" ColumnName="Installment6Rs" />
+                <ScalarProperty Name="Installment6Date" ColumnName="Installment6Date" />
+                <ScalarProperty Name="Installment7Rs" ColumnName="Installment7Rs" />
+                <ScalarProperty Name="Installment7Date" ColumnName="Installment7Date" />
+                <ScalarProperty Name="Installment8Rs" ColumnName="Installment8Rs" />
+                <ScalarProperty Name="Installment8Date" ColumnName="Installment8Date" />
+                <ScalarProperty Name="Installment9Rs" ColumnName="Installment9Rs" />
+                <ScalarProperty Name="Installment9Date" ColumnName="Installment9Date" />
+                <ScalarProperty Name="Installment10Rs" ColumnName="Installment10Rs" />
+                <ScalarProperty Name="Installment10Date" ColumnName="Installment10Date" />
+                <ScalarProperty Name="EntDt" ColumnName="EntDt" />
+                <ScalarProperty Name="EntBy" ColumnName="EntBy" />
+                <ScalarProperty Name="ModDt" ColumnName="ModDt" />
+                <ScalarProperty Name="ModBy" ColumnName="ModBy" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="BirthDate_S" ColumnName="BirthDate_S" />
+                <ScalarProperty Name="AdmissionNo" ColumnName="AdmissionNo" />
+                <ScalarProperty Name="RegNo" ColumnName="RegNo" />
+                <ScalarProperty Name="FeesRemain" ColumnName="FeesRemain" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="aspccModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="DeleteInquiry" FunctionName="aspccModel.Store.DeleteInquiry" />
+          <FunctionImportMapping FunctionImportName="InsertUpdateAdmission" FunctionName="aspccModel.Store.InsertUpdateAdmission" />
+          <FunctionImportMapping FunctionImportName="DeleteAdmission" FunctionName="aspccModel.Store.DeleteAdmission" />
+          <FunctionImportMapping FunctionImportName="InsertLog" FunctionName="aspccModel.Store.InsertLog" />
+          <EntitySetMapping Name="Inquiries">
+            <EntityTypeMapping TypeName="aspccModel.Inquiry">
+              <MappingFragment StoreEntitySet="Inquiry">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="ModBy" ColumnName="ModBy" />
+                <ScalarProperty Name="ModDt" ColumnName="ModDt" />
+                <ScalarProperty Name="EntBy" ColumnName="EntBy" />
+                <ScalarProperty Name="EntDt" ColumnName="EntDt" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Final" ColumnName="Final" />
+                <ScalarProperty Name="PreferTimeFrom" ColumnName="PreferTimeFrom" />
+                <ScalarProperty Name="PreferTimeTO" ColumnName="PreferTimeTO" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admissions">
+            <EntityTypeMapping TypeName="aspccModel.Admission">
+              <MappingFragment StoreEntitySet="Admission">
+                <ScalarProperty Name="RegNo" ColumnName="RegNo" />
+                <ScalarProperty Name="isdelete" ColumnName="isdelete" />
+                <ScalarProperty Name="AdmissionNo" ColumnName="AdmissionNo" />
+                <ScalarProperty Name="ModBy" ColumnName="ModBy" />
+                <ScalarProperty Name="ModDt" ColumnName="ModDt" />
+                <ScalarProperty Name="EntBy" ColumnName="EntBy" />
+                <ScalarProperty Name="EntDt" ColumnName="EntDt" />
+                <ScalarProperty Name="Installment10Date" ColumnName="Installment10Date" />
+                <ScalarProperty Name="Installment10Rs" ColumnName="Installment10Rs" />
+                <ScalarProperty Name="Installment9Date" ColumnName="Installment9Date" />
+                <ScalarProperty Name="Installment9Rs" ColumnName="Installment9Rs" />
+                <ScalarProperty Name="Installment8Date" ColumnName="Installment8Date" />
+                <ScalarProperty Name="Installment8Rs" ColumnName="Installment8Rs" />
+                <ScalarProperty Name="Installment7Date" ColumnName="Installment7Date" />
+                <ScalarProperty Name="Installment7Rs" ColumnName="Installment7Rs" />
+                <ScalarProperty Name="Installment6Date" ColumnName="Installment6Date" />
+                <ScalarProperty Name="Installment6Rs" ColumnName="Installment6Rs" />
+                <ScalarProperty Name="Installment5Date" ColumnName="Installment5Date" />
+                <ScalarProperty Name="Installment5Rs" ColumnName="Installment5Rs" />
+                <ScalarProperty Name="Installment4Date" ColumnName="Installment4Date" />
+                <ScalarProperty Name="Installment4Rs" ColumnName="Installment4Rs" />
+                <ScalarProperty Name="Installment3Date" ColumnName="Installment3Date" />
+                <ScalarProperty Name="Installment3Rs" ColumnName="Installment3Rs" />
+                <ScalarProperty Name="Installment2Date" ColumnName="Installment2Date" />
+                <ScalarProperty Name="Installment2Rs" ColumnName="Installment2Rs" />
+                <ScalarProperty Name="Installment1Date" ColumnName="Installment1Date" />
+                <ScalarProperty Name="Installment1Rs" ColumnName="Installment1Rs" />
+                <ScalarProperty Name="NoOfInstallment" ColumnName="NoOfInstallment" />
+                <ScalarProperty Name="NetFees" ColumnName="NetFees" />
+                <ScalarProperty Name="DisCount" ColumnName="DisCount" />
+                <ScalarProperty Name="TotalFees" ColumnName="TotalFees" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="PreferTimeFrom" ColumnName="PreferTimeFrom" />
+                <ScalarProperty Name="PreferTimeTO" ColumnName="PreferTimeTO" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+                <ScalarProperty Name="OccupationId" ColumnName="OccupationId" />
+                <ScalarProperty Name="StreamId" ColumnName="StreamId" />
+                <ScalarProperty Name="QualificationId" ColumnName="QualificationId" />
+                <ScalarProperty Name="AreId" ColumnName="AreId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobileP" ColumnName="MobileP" />
+                <ScalarProperty Name="MobileF" ColumnName="MobileF" />
+                <ScalarProperty Name="MobileH" ColumnName="MobileH" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Lname" ColumnName="Lname" />
+                <ScalarProperty Name="Mname" ColumnName="Mname" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="JoinDate" ColumnName="JoinDate" />
+                <ScalarProperty Name="AdmissionDate" ColumnName="AdmissionDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ExamInsertUpdate" FunctionName="aspccModel.Store.ExamInsertUpdate" />
+          <FunctionImportMapping FunctionImportName="getexamList" FunctionName="aspccModel.Store.getexamList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="aspccModel.getexamList_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="noofQestion" ColumnName="noofQestion" />
+                <ScalarProperty Name="ActtiveText" ColumnName="ActtiveText" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getexamById" FunctionName="aspccModel.Store.getexamById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="aspccModel.getexamById_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="noofQestion" ColumnName="noofQestion" />
+                <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+                <ScalarProperty Name="ActtiveText" ColumnName="ActtiveText" />
+                <ScalarProperty Name="CoruserId" ColumnName="CoruserId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DeleteExam" FunctionName="aspccModel.Store.DeleteExam" />
+          <FunctionImportMapping FunctionImportName="ExamQuestionInsertUpdate" FunctionName="aspccModel.Store.ExamQuestionInsertUpdate" />
+          <EntitySetMapping Name="Exams">
+            <EntityTypeMapping TypeName="aspccModel.Exam">
+              <MappingFragment StoreEntitySet="Exam">
+                <ScalarProperty Name="CoruserId" ColumnName="CoruserId" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+                <ScalarProperty Name="noofQestion" ColumnName="noofQestion" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExamQuestionOps">
+            <EntityTypeMapping TypeName="aspccModel.ExamQuestionOp">
+              <MappingFragment StoreEntitySet="ExamQuestionOp">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="CorrectAns" ColumnName="CorrectAns" />
+                <ScalarProperty Name="Option4" ColumnName="Option4" />
+                <ScalarProperty Name="Option3" ColumnName="Option3" />
+                <ScalarProperty Name="Option2" ColumnName="Option2" />
+                <ScalarProperty Name="Option1" ColumnName="Option1" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="ExamId" ColumnName="ExamId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="getExamQuestionListByExamQuestionId" FunctionName="aspccModel.Store.getExamQuestionListByExamQuestionId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="aspccModel.getExamQuestionListByExamQuestionId_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ExamId" ColumnName="ExamId" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Option1" ColumnName="Option1" />
+                <ScalarProperty Name="Option2" ColumnName="Option2" />
+                <ScalarProperty Name="Option3" ColumnName="Option3" />
+                <ScalarProperty Name="Option4" ColumnName="Option4" />
+                <ScalarProperty Name="CorrectAns" ColumnName="CorrectAns" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getStudentexamById" FunctionName="aspccModel.Store.getStudentexamById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="aspccModel.getStudentexamById_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CoruserId" ColumnName="CoruserId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="noofQestion" ColumnName="noofQestion" />
+                <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="StudentExams">
+            <EntityTypeMapping TypeName="aspccModel.StudentExam">
+              <MappingFragment StoreEntitySet="StudentExam">
+                <ScalarProperty Name="ModBy" ColumnName="ModBy" />
+                <ScalarProperty Name="ModDt" ColumnName="ModDt" />
+                <ScalarProperty Name="EntBy" ColumnName="EntBy" />
+                <ScalarProperty Name="EntDt" ColumnName="EntDt" />
+                <ScalarProperty Name="IsExamFinish" ColumnName="IsExamFinish" />
+                <ScalarProperty Name="ExamId" ColumnName="ExamId" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentExamDetails">
+            <EntityTypeMapping TypeName="aspccModel.StudentExamDetail">
+              <MappingFragment StoreEntitySet="StudentExamDetails">
+                <ScalarProperty Name="ModDt" ColumnName="ModDt" />
+                <ScalarProperty Name="EntDt" ColumnName="EntDt" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+                <ScalarProperty Name="StudentExamId" ColumnName="StudentExamId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ChkStdExamAvalable" FunctionName="aspccModel.Store.ChkStdExamAvalable" />
+          <FunctionImportMapping FunctionImportName="GetStdExamDetailsById" FunctionName="aspccModel.Store.GetStdExamDetailsById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="aspccModel.GetStdExamDetailsById_Result">
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Option1" ColumnName="Option1" />
+                <ScalarProperty Name="Option2" ColumnName="Option2" />
+                <ScalarProperty Name="Option3" ColumnName="Option3" />
+                <ScalarProperty Name="Option4" ColumnName="Option4" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="ExamId" ColumnName="ExamId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertExamStudentAttemptBystdId" FunctionName="aspccModel.Store.InsertExamStudentAttemptBystdId" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="aspccModel.InsertExamStudentAttemptBystdId_Result">
+                <ScalarProperty Name="StudentExamid" ColumnName="StudentExamid" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="ExamId" ColumnName="ExamId" />
+                <ScalarProperty Name="ExamName" ColumnName="ExamName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ChkExamFinish" FunctionName="aspccModel.Store.ChkExamFinish">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="aspccModel.ChkExamFinish_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="ExamId" ColumnName="ExamId" />
+                <ScalarProperty Name="IsExamFinish" ColumnName="IsExamFinish" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpdateQuestionAnswere" FunctionName="aspccModel.Store.UpdateQuestionAnswere" />
+          <FunctionImportMapping FunctionImportName="GetStdUPdateQuestionAnswereById" FunctionName="aspccModel.Store.GetStdUPdateQuestionAnswereById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="aspccModel.GetStdUPdateQuestionAnswereById_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Option1" ColumnName="Option1" />
+                <ScalarProperty Name="Option2" ColumnName="Option2" />
+                <ScalarProperty Name="Option3" ColumnName="Option3" />
+                <ScalarProperty Name="Option4" ColumnName="Option4" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getStudentExamResultbyStdExamId" FunctionName="aspccModel.Store.getStudentExamResultbyStdExamId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="aspccModel.getStudentExamResultbyStdExamId_Result">
+                <ScalarProperty Name="ExamName" ColumnName="ExamName" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Option1" ColumnName="Option1" />
+                <ScalarProperty Name="Option2" ColumnName="Option2" />
+                <ScalarProperty Name="Option3" ColumnName="Option3" />
+                <ScalarProperty Name="Option4" ColumnName="Option4" />
+                <ScalarProperty Name="CorrectAns" ColumnName="CorrectAns" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="SCORE" ColumnName="SCORE" />
+                <ScalarProperty Name="EntDt" ColumnName="EntDt" />
+                <ScalarProperty Name="ModDt" ColumnName="ModDt" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="updateStudentExam" FunctionName="aspccModel.Store.updateStudentExam" />
+          <FunctionImportMapping FunctionImportName="viewResultByStdId" FunctionName="aspccModel.Store.viewResultByStdId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="aspccModel.viewResultByStdId_Result">
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="ExamName" ColumnName="ExamName" />
+                <ScalarProperty Name="StudentExamId" ColumnName="StudentExamId" />
+                <ScalarProperty Name="noofQestion" ColumnName="noofQestion" />
+                <ScalarProperty Name="EntDt" ColumnName="EntDt" />
+                <ScalarProperty Name="ModDt" ColumnName="ModDt" />
+                <ScalarProperty Name="Totalmarks" ColumnName="Totalmarks" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ExamCopyQuestion" FunctionName="aspccModel.Store.ExamCopyQuestion" />
+          <FunctionImportMapping FunctionImportName="DataBaseBackUp" FunctionName="aspccModel.Store.DataBaseBackUp" />
+          <FunctionImportMapping FunctionImportName="getExamQuestionListByExamId" FunctionName="aspccModel.Store.getExamQuestionListByExamId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="aspccModel.getExamQuestionListByExamId_Result">
+                <ScalarProperty Name="RowID" ColumnName="RowID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ExamId" ColumnName="ExamId" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Option1" ColumnName="Option1" />
+                <ScalarProperty Name="Option2" ColumnName="Option2" />
+                <ScalarProperty Name="Option3" ColumnName="Option3" />
+                <ScalarProperty Name="Option4" ColumnName="Option4" />
+                <ScalarProperty Name="CorrectAnsNo" ColumnName="CorrectAnsNo" />
+                <ScalarProperty Name="CorrectAns" ColumnName="CorrectAns" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

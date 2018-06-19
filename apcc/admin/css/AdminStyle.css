@@ -1,0 +1,17 @@
+﻿.right{ float:right}
+.reqValidate { color:red}
+.margingleft10 {margin-left:10px!important}
+.spnLabel {
+    display: inline-block !important;
+    max-width: 100% !important;
+    margin-bottom: 5px !important;
+    font-weight: 700 !important;
+    cursor: default !important;
+}
+.hrblack {
+    border-top: 1px solid #060606 !important;
+}
+.hideControl {
+    display:none;
+}
+.trTopBorder {border-top:1px solid;}
