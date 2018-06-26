@@ -18,7 +18,7 @@
             <div class="box-header with-border">
                 <div class="col-lg-12">
                     <div class="col-lg-6">
-                        <asp:Button Text="Print" ID="btnPrint" OnClick="btnPrint_Click" runat="server" />
+                        <asp:Button Text="Print" ID="btnPrint" OnClientClick="print()" runat="server" />
                     </div>
                 </div>
             </div>
@@ -37,7 +37,8 @@
                     <div class="col-lg-3">
                     </div>
                     <div class="col-lg-3 ">
-                         <asp:Button Text="Print"  CssClass="btn btn-primary right"  ID="btnprintq" OnClick="btnprint_Click1" runat="server" />
+                        <%-- <asp:Button Text="Print"   CssClass="btn btn-primary right"  ID="btnprintq" OnClick="btnprint_Click1" runat="server" />--%>
+                         <asp:Button Text="Print" ID="Button1" CssClass="btn btn-primary right" OnClientClick="print()" runat="server" />
                     </div>
                 </div>
             </div>
@@ -45,7 +46,18 @@
         </div>
         
     </div>
-    <div class="box box-info" id="divquestion" runat="server">
+    <div id="divHead" style="display:none">
+        <div style="text-align:center">
+            <label style=font-family:ravel;font-size:large;>APURVA STAR PLUSE COMPUTER CLASSES</label>
+             <br>
+            <span> FF - 6, Vishwash City-1,Shayonacity,Chanakyapuri, Ghatlodia, Ahmedabad, Gujarat 380061 </span>
+            <br>
+            <span>Email: apurvastarpulse @yahoo.com Mobile : 9978532833 </span>
+            <br>
+            <h3 class="box-title" id="printhdHead" runat="server">Exam Name</h3>
+        </div>
+    </div>
+    <div class="box box-info" id="divquestion" runat="server" ClientIDMode="Static">
     </div>
 
 
@@ -58,5 +70,20 @@
                 ]
             });
         });
+
+        function print() {
+            var divHead = document.getElementById('divHead');
+            var divToPrint = document.getElementById('divquestion');
+
+            var newWin = window.open('', 'Print-Window');
+
+            newWin.document.open();
+
+            newWin.document.write('<html><body onload="window.print()">' + divHead.innerHTML + divToPrint.innerHTML + '</body></html>');
+
+            newWin.document.close();
+
+            setTimeout(function () { newWin.close(); }, 10);
+        }
     </script>
 </asp:Content>

@@ -54,7 +54,7 @@ namespace apcc.admin
             {
                 getexamById_Result objExam = new getexamById_Result();
                 objExam = objBalExam.GetexamById(Examid);
-                h3Exmaname.InnerText = objExam.Name;
+                printhdHead.InnerText= h3Exmaname.InnerText = objExam.Name;
                 List<getExamQuestionListByExamId_Result> ExamQuestionist = new List<getExamQuestionListByExamId_Result>();
                 ExamQuestionist = objBalExam.getExamQuestionListByExamId(examId);
 
@@ -170,13 +170,78 @@ namespace apcc.admin
             frmPrint.Attributes["src"] = "Print.pdf";
         }
 
+        //protected void btnprint_Click1(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+
+
+        //        string filname = h3Exmaname.InnerText.Replace(" ","").Trim() + ".pdf";
+
+        //        PdfPrintOptions printopt = new PdfPrintOptions();
+        //        printopt.CssMediaType = PdfPrintOptions.PdfCssMediaType.Screen;
+        //        string csspath = Server.MapPath("~/admin/css/AdminStyle.css");
+        //        var uri = new System.Uri(csspath);
+        //        var converted = uri.AbsoluteUri;
+        //        printopt.CustomCssUrl = uri;
+        //        HtmlToPdf Renderer = new IronPdf.HtmlToPdf(printopt);
+        //        string html = divquestion.InnerHtml;
+        //        Renderer.PrintOptions.CssMediaType = PdfPrintOptions.PdfCssMediaType.Screen;
+
+        //        var PDF = Renderer.RenderHtmlAsPdf(html, uri);
+
+        //        string watermarktext = "<label style=font-family:ravel;>APURVA STAR PLUSE COMPUTER CLASSES</label> <br> FF - 6, Vishwash City-1,Shayonacity,Chanakyapuri, Ghatlodia, Ahmedabad, Gujarat 380061 <br>Email: apurvastarpulse @yahoo.com <br>Mobile : 9978532833 ";
+        //        PDF.WatermarkAllPages("<h2 style='color:blue'>" + watermarktext + "</h2>", IronPdf.PdfDocument.WaterMarkLocation.MiddleCenter, 50, -45);
+
+        //        #region header
+        //        SimpleHeaderFooter head = new SimpleHeaderFooter();
+        //        head.CenterText = h3Exmaname.InnerText;
+        //        head.FontFamily = "Ravel";
+        //        head.DrawDividerLine = true;
+        //        head.FontSize = 14;
+        //        #endregion
+        //        PDF.AddHeaders(head, false);
+
+        //        SimpleHeaderFooter Footer = new SimpleHeaderFooter()
+        //        {
+        //            LeftText = "{date} {time}",
+        //            RightText = "Page {page} of {total-pages}",
+        //            DrawDividerLine = true,
+        //            FontSize = 8
+        //        };
+        //        PDF.AddFooters(Footer, false);
+        //        //Renderer.PrintOptions.CssMediaType = PdfPrintOptions.PdfCssMediaType.Print;
+        //        //or
+
+
+
+        //        string uploadPath = Server.MapPath("~/QuestionPdf");
+        //        if (!Directory.Exists(uploadPath))
+        //        {
+        //            Directory.CreateDirectory(uploadPath);
+        //        }
+        //        PDF.SaveAs(Path.Combine(uploadPath, filname));
+
+        //        Response.ContentType = "application/pdf";
+        //        Response.AppendHeader("Content-Disposition", "attachment; filename="+ filname);
+        //        Response.TransmitFile(Path.Combine(uploadPath, filname.Trim()));
+        //        Response.End();
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        com.Loginsert(HttpContext.Current.Request.Url.AbsolutePath, "btnprint_Click1", ex.StackTrace, ex.Message);
+        //    }
+
+        //}
+
         protected void btnprint_Click1(object sender, EventArgs e)
         {
             try
             {
-                
-              
-                string filname = h3Exmaname.InnerText.Replace(" ","").Trim() + ".pdf";
+
+
+                string filname = h3Exmaname.InnerText.Replace(" ", "").Trim() + ".pdf";
 
                 PdfPrintOptions printopt = new PdfPrintOptions();
                 printopt.CssMediaType = PdfPrintOptions.PdfCssMediaType.Screen;
@@ -186,53 +251,19 @@ namespace apcc.admin
                 printopt.CustomCssUrl = uri;
                 HtmlToPdf Renderer = new IronPdf.HtmlToPdf(printopt);
                 string html = divquestion.InnerHtml;
-                Renderer.PrintOptions.CssMediaType = PdfPrintOptions.PdfCssMediaType.Screen;
 
-                var PDF = Renderer.RenderHtmlAsPdf(html, uri);
-                
-                string watermarktext = "<label style=font-family:ravel;>APURVA STAR PLUSE COMPUTER CLASSES</label> <br> FF - 6, Vishwash City-1,Shayonacity,Chanakyapuri, Ghatlodia, Ahmedabad, Gujarat 380061 <br>Email: apurvastarpulse @yahoo.com <br>Mobile : 9978532833 ";
-                PDF.WatermarkAllPages("<h2 style='color:blue'>" + watermarktext + "</h2>", IronPdf.PdfDocument.WaterMarkLocation.MiddleCenter, 50, -45);
+                var htmlContent = String.Format(html,DateTime.Now);
+                var htmlToPdf = new NReco.PdfGenerator.HtmlToPdfConverter();
+                var pdfBytes = htmlToPdf.GeneratePdf(htmlContent);
 
-                #region header
-                SimpleHeaderFooter head = new SimpleHeaderFooter();
-                head.CenterText = h3Exmaname.InnerText;
-                head.FontFamily = "Ravel";
-                head.DrawDividerLine = true;
-                head.FontSize = 14;
-                #endregion
-                PDF.AddHeaders(head, false);
-
-                SimpleHeaderFooter Footer = new SimpleHeaderFooter()
-                {
-                    LeftText = "{date} {time}",
-                    RightText = "Page {page} of {total-pages}",
-                    DrawDividerLine = true,
-                    FontSize = 8
-                };
-                PDF.AddFooters(Footer, false);
-                //Renderer.PrintOptions.CssMediaType = PdfPrintOptions.PdfCssMediaType.Print;
-                //or
-
-
-
-                string uploadPath = Server.MapPath("~/QuestionPdf");
-                if (!Directory.Exists(uploadPath))
-                {
-                    Directory.CreateDirectory(uploadPath);
-                }
-                PDF.SaveAs(Path.Combine(uploadPath, filname));
-
-                Response.ContentType = "application/pdf";
-                Response.AppendHeader("Content-Disposition", "attachment; filename="+ filname);
-                Response.TransmitFile(Path.Combine(uploadPath, filname.Trim()));
-                Response.End();
+                htmlToPdf.GeneratePdf(htmlContent, null, "export.pdf");
 
             }
             catch (Exception ex)
             {
                 com.Loginsert(HttpContext.Current.Request.Url.AbsolutePath, "btnprint_Click1", ex.StackTrace, ex.Message);
             }
-            
+
         }
 
         public void pdfGenrate(string html) {
