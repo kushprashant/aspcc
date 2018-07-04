@@ -40,6 +40,13 @@
                                         Text='<%# Eval("RegNo")%>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
+                             <asp:TemplateField ItemStyle-Width="10px" HeaderText="Join Date">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblJoinDate" runat="server"
+                                        Text='<%# Eval("JoinDate")%>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            
                             <asp:TemplateField ItemStyle-Width="30px" HeaderText="First Name">
                                 <ItemTemplate>
                                     <asp:Label ID="lblfname" runat="server"

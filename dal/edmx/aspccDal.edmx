@@ -608,7 +608,7 @@ warning 6002: The table/view 'aspcc.dbo.State' does not have a primary key defin
           </FunctionImport>
           <FunctionImport Name="DataBaseBackUp" />
           <FunctionImport Name="getExamQuestionListByExamId" ReturnType="Collection(aspccModel.getExamQuestionListByExamId_Result)">
-            <Parameter Name="ExamId" Mode="In" Type="Int32" />
+          <Parameter Name="ExamId" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Course">
@@ -846,6 +846,7 @@ warning 6002: The table/view 'aspcc.dbo.State' does not have a primary key defin
           <Property Type="String" Name="AdmissionNo" Nullable="true" MaxLength="15" />
           <Property Type="String" Name="RegNo" Nullable="true" MaxLength="10" />
           <Property Type="Decimal" Name="FeesRemain" Nullable="true" Precision="28" Scale="2" />
+          <Property Type="String" Name="JoinDate" Nullable="true" MaxLength="10" />
         </ComplexType>
         <EntityType Name="User">
           <Key>
@@ -1398,6 +1399,7 @@ warning 6002: The table/view 'aspcc.dbo.State' does not have a primary key defin
                 <ScalarProperty Name="AdmissionNo" ColumnName="AdmissionNo" />
                 <ScalarProperty Name="RegNo" ColumnName="RegNo" />
                 <ScalarProperty Name="FeesRemain" ColumnName="FeesRemain" />
+                <ScalarProperty Name="JoinDate" ColumnName="JoinDate" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

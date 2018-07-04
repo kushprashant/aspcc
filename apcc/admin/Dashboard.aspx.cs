@@ -1,6 +1,7 @@
 ﻿using bal;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -19,7 +20,8 @@ namespace apcc.admin
         [System.Web.Services.WebMethod]
         public static void databaseBackUp()
         {
-            com.DataBaseBackUp();
+            string dbpath = ConfigurationManager.AppSettings["dbBackPath"];
+            com.DataBaseBackUp(dbpath);
         }
     }
 }

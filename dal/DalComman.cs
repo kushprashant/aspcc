@@ -28,13 +28,14 @@ namespace dal
 
         }
 
-        public void DataBaseBackUp()
+        public void DataBaseBackUp(string dbpath)
         {
             try
             {
+                
                 using (aspccEntities db = new aspccEntities())
                 {
-                    db.Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, @"DECLARE @DBName NVARCHAR(max); SET @DBName = 'aspcc ' + CONVERT(nvarchar(50), getdate(), 113) + '.bak'; SET @DBName = 'E:\\DBbackups\\'+REPLACE(REPLACE(@DBName,' ',''),':',''); BACKUP DATABASE aspcc TO  DISK = @DBName WITH NOFORMAT, INIT, NAME = N'aspcc Backup', SKIP, NOREWIND, NOUNLOAD,  STATS = 10");
+                    db.Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, @"DECLARE @DBName NVARCHAR(max); SET @DBName = 'aspcc ' + CONVERT(nvarchar(50), getdate(), 113) + '.bak'; SET @DBName = '"+ dbpath + "\\'+REPLACE(REPLACE(@DBName,' ',''),':',''); BACKUP DATABASE aspcc TO  DISK = @DBName WITH NOFORMAT, INIT, NAME = N'aspcc Backup', SKIP, NOREWIND, NOUNLOAD,  STATS = 10");
                 }
 
             }

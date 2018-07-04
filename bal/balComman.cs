@@ -16,9 +16,9 @@ namespace bal
             com.Loginsert(url, method, error, innermgs);
         }
 
-        public void DataBaseBackUp()
+        public void DataBaseBackUp(string dbpath)
         {
-            com.DataBaseBackUp();
+            com.DataBaseBackUp(dbpath);
         }
     }
 }

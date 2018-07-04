@@ -65,5 +65,6 @@ namespace dal.edmx
         public string AdmissionNo { get; set; }
         public string RegNo { get; set; }
         public Nullable<decimal> FeesRemain { get; set; }
+        public string JoinDate { get; set; }
     }
 }
