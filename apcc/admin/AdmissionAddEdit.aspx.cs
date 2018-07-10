@@ -131,6 +131,47 @@ namespace apcc.admin
                         {
                             objadm.Installment5Rs = Convert.ToDecimal(string.IsNullOrEmpty(textBox.Text) ? "0" : textBox.Text);
                         }
+                        if (textBox.ID == "txtdateInstallment6")
+                        {
+                            objadm.Installment6Date = Comman.CommanUtils.convertDDMMYYYY(textBox.Text);
+                        }
+                        if (textBox.ID == "txtrdInstallment6")
+                        {
+                            objadm.Installment6Rs = Convert.ToDecimal(string.IsNullOrEmpty(textBox.Text) ? "0" : textBox.Text);
+                        }
+                        if (textBox.ID == "txtdateInstallment7")
+                        {
+                            objadm.Installment7Date = Comman.CommanUtils.convertDDMMYYYY(textBox.Text);
+                        }
+                        if (textBox.ID == "txtrdInstallment7")
+                        {
+                            objadm.Installment7Rs = Convert.ToDecimal(string.IsNullOrEmpty(textBox.Text) ? "0" : textBox.Text);
+                        }
+                        if (textBox.ID == "txtdateInstallment8")
+                        {
+                            objadm.Installment8Date = Comman.CommanUtils.convertDDMMYYYY(textBox.Text);
+                        }
+                        if (textBox.ID == "txtrdInstallment8")
+                        {
+                            objadm.Installment8Rs = Convert.ToDecimal(string.IsNullOrEmpty(textBox.Text) ? "0" : textBox.Text);
+                        }
+                        if (textBox.ID == "txtdateInstallment9")
+                        {
+                            objadm.Installment9Date = Comman.CommanUtils.convertDDMMYYYY(textBox.Text);
+                        }
+                        if (textBox.ID == "txtrdInstallment9")
+                        {
+                            objadm.Installment9Rs = Convert.ToDecimal(string.IsNullOrEmpty(textBox.Text) ? "0" : textBox.Text);
+                        }
+                        if (textBox.ID == "txtdateInstallment10")
+                        {
+                            objadm.Installment10Date = Comman.CommanUtils.convertDDMMYYYY(textBox.Text);
+                        }
+                        if (textBox.ID == "txtrdInstallment10")
+                        {
+                            objadm.Installment10Rs = Convert.ToDecimal(string.IsNullOrEmpty(textBox.Text) ? "0" : textBox.Text);
+                        }
+
                     }
 
                     int result = objAdmOp.InsertUpdateAdmission(objadm);
@@ -210,7 +251,9 @@ namespace apcc.admin
 
                 ContentPlaceHolder cph = (ContentPlaceHolder)this.Master.FindControl("ContentPlaceHolder1");
                 Panel pnlInstallmentBoxes = (Panel)cph.FindControl("pnlInstallmentBoxes");
-
+                if (noofint == 10) {
+                    btnAddInstallment.Visible = false;
+                }
                 for (int i = 0; i < noofint; i++)
                 {
                     Literal lts = new Literal();
@@ -412,6 +455,47 @@ namespace apcc.admin
                     {
                         textBox.Text = Convert.ToString(objadm.Installment5Rs);
                     }
+                    if (textBox.ID == "txtdateInstallment6")
+                    {
+                        textBox.Text = Convert.ToString(objadm.Installment6Date_S);
+                    }
+                    if (textBox.ID == "txtrdInstallment6")
+                    {
+                        textBox.Text = Convert.ToString(objadm.Installment6Rs);
+                    }
+                    if (textBox.ID == "txtdateInstallment7")
+                    {
+                        textBox.Text = Convert.ToString(objadm.Installment7Date_S);
+                    }
+                    if (textBox.ID == "txtrdInstallment7")
+                    {
+                        textBox.Text = Convert.ToString(objadm.Installment7Rs);
+                    }
+                    if (textBox.ID == "txtdateInstallment8")
+                    {
+                        textBox.Text = Convert.ToString(objadm.Installment8Date_S);
+                    }
+                    if (textBox.ID == "txtrdInstallment8")
+                    {
+                        textBox.Text = Convert.ToString(objadm.Installment8Rs);
+                    }
+                    if (textBox.ID == "txtdateInstallment9")
+                    {
+                        textBox.Text = Convert.ToString(objadm.Installment9Date_S);
+                    }
+                    if (textBox.ID == "txtrdInstallment9")
+                    {
+                        textBox.Text = Convert.ToString(objadm.Installment9Rs);
+                    }
+                    if (textBox.ID == "txtdateInstallment10")
+                    {
+                        textBox.Text = Convert.ToString(objadm.Installment10Date_S);
+                    }
+                    if (textBox.ID == "txtrdInstallment10")
+                    {
+                        textBox.Text = Convert.ToString(objadm.Installment10Rs);
+                    }
+
                 }
 
 

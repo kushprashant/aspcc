@@ -352,6 +352,26 @@ namespace apcc.admin.Reports.DataSet {
             
             private global::System.Data.DataColumn columnRegNo;
             
+            private global::System.Data.DataColumn columnInstallment6Rs;
+            
+            private global::System.Data.DataColumn columnInstallment7Rs;
+            
+            private global::System.Data.DataColumn columnInstallment8Rs;
+            
+            private global::System.Data.DataColumn columnInstallment9Rs;
+            
+            private global::System.Data.DataColumn columnInstallment10Rs;
+            
+            private global::System.Data.DataColumn columnInstallment6Date_S;
+            
+            private global::System.Data.DataColumn columnInstallment7Date_S;
+            
+            private global::System.Data.DataColumn columnInstallment8Date_S;
+            
+            private global::System.Data.DataColumn columnInstallment9Date_S;
+            
+            private global::System.Data.DataColumn columnInstallment10Date_S;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AdmissionDataTable() {
@@ -683,6 +703,86 @@ namespace apcc.admin.Reports.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Installment6RsColumn {
+                get {
+                    return this.columnInstallment6Rs;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Installment7RsColumn {
+                get {
+                    return this.columnInstallment7Rs;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Installment8RsColumn {
+                get {
+                    return this.columnInstallment8Rs;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Installment9RsColumn {
+                get {
+                    return this.columnInstallment9Rs;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Installment10RsColumn {
+                get {
+                    return this.columnInstallment10Rs;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Installment6Date_SColumn {
+                get {
+                    return this.columnInstallment6Date_S;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Installment7Date_SColumn {
+                get {
+                    return this.columnInstallment7Date_S;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Installment8Date_SColumn {
+                get {
+                    return this.columnInstallment8Date_S;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Installment9Date_SColumn {
+                get {
+                    return this.columnInstallment9Date_S;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Installment10Date_SColumn {
+                get {
+                    return this.columnInstallment10Date_S;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -755,7 +855,17 @@ namespace apcc.admin.Reports.DataSet {
                         string AdmissionDate_S, 
                         string AdmissionNo, 
                         string Age, 
-                        string RegNo) {
+                        string RegNo, 
+                        string Installment6Rs, 
+                        string Installment7Rs, 
+                        string Installment8Rs, 
+                        string Installment9Rs, 
+                        string Installment10Rs, 
+                        string Installment6Date_S, 
+                        string Installment7Date_S, 
+                        string Installment8Date_S, 
+                        string Installment9Date_S, 
+                        string Installment10Date_S) {
                 AdmissionRow rowAdmissionRow = ((AdmissionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -794,7 +904,17 @@ namespace apcc.admin.Reports.DataSet {
                         AdmissionDate_S,
                         AdmissionNo,
                         Age,
-                        RegNo};
+                        RegNo,
+                        Installment6Rs,
+                        Installment7Rs,
+                        Installment8Rs,
+                        Installment9Rs,
+                        Installment10Rs,
+                        Installment6Date_S,
+                        Installment7Date_S,
+                        Installment8Date_S,
+                        Installment9Date_S,
+                        Installment10Date_S};
                 rowAdmissionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAdmissionRow);
                 return rowAdmissionRow;
@@ -854,6 +974,16 @@ namespace apcc.admin.Reports.DataSet {
                 this.columnAdmissionNo = base.Columns["AdmissionNo"];
                 this.columnAge = base.Columns["Age"];
                 this.columnRegNo = base.Columns["RegNo"];
+                this.columnInstallment6Rs = base.Columns["Installment6Rs"];
+                this.columnInstallment7Rs = base.Columns["Installment7Rs"];
+                this.columnInstallment8Rs = base.Columns["Installment8Rs"];
+                this.columnInstallment9Rs = base.Columns["Installment9Rs"];
+                this.columnInstallment10Rs = base.Columns["Installment10Rs"];
+                this.columnInstallment6Date_S = base.Columns["Installment6Date_S"];
+                this.columnInstallment7Date_S = base.Columns["Installment7Date_S"];
+                this.columnInstallment8Date_S = base.Columns["Installment8Date_S"];
+                this.columnInstallment9Date_S = base.Columns["Installment9Date_S"];
+                this.columnInstallment10Date_S = base.Columns["Installment10Date_S"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -933,6 +1063,26 @@ namespace apcc.admin.Reports.DataSet {
                 base.Columns.Add(this.columnAge);
                 this.columnRegNo = new global::System.Data.DataColumn("RegNo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRegNo);
+                this.columnInstallment6Rs = new global::System.Data.DataColumn("Installment6Rs", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstallment6Rs);
+                this.columnInstallment7Rs = new global::System.Data.DataColumn("Installment7Rs", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstallment7Rs);
+                this.columnInstallment8Rs = new global::System.Data.DataColumn("Installment8Rs", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstallment8Rs);
+                this.columnInstallment9Rs = new global::System.Data.DataColumn("Installment9Rs", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstallment9Rs);
+                this.columnInstallment10Rs = new global::System.Data.DataColumn("Installment10Rs", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstallment10Rs);
+                this.columnInstallment6Date_S = new global::System.Data.DataColumn("Installment6Date_S", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstallment6Date_S);
+                this.columnInstallment7Date_S = new global::System.Data.DataColumn("Installment7Date_S", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstallment7Date_S);
+                this.columnInstallment8Date_S = new global::System.Data.DataColumn("Installment8Date_S", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstallment8Date_S);
+                this.columnInstallment9Date_S = new global::System.Data.DataColumn("Installment9Date_S", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstallment9Date_S);
+                this.columnInstallment10Date_S = new global::System.Data.DataColumn("Installment10Date_S", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInstallment10Date_S);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1667,6 +1817,166 @@ namespace apcc.admin.Reports.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Installment6Rs {
+                get {
+                    try {
+                        return ((string)(this[this.tableAdmission.Installment6RsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Installment6Rs\' in table \'Admission\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAdmission.Installment6RsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Installment7Rs {
+                get {
+                    try {
+                        return ((string)(this[this.tableAdmission.Installment7RsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Installment7Rs\' in table \'Admission\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAdmission.Installment7RsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Installment8Rs {
+                get {
+                    try {
+                        return ((string)(this[this.tableAdmission.Installment8RsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Installment8Rs\' in table \'Admission\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAdmission.Installment8RsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Installment9Rs {
+                get {
+                    try {
+                        return ((string)(this[this.tableAdmission.Installment9RsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Installment9Rs\' in table \'Admission\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAdmission.Installment9RsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Installment10Rs {
+                get {
+                    try {
+                        return ((string)(this[this.tableAdmission.Installment10RsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Installment10Rs\' in table \'Admission\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAdmission.Installment10RsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Installment6Date_S {
+                get {
+                    try {
+                        return ((string)(this[this.tableAdmission.Installment6Date_SColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Installment6Date_S\' in table \'Admission\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAdmission.Installment6Date_SColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Installment7Date_S {
+                get {
+                    try {
+                        return ((string)(this[this.tableAdmission.Installment7Date_SColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Installment7Date_S\' in table \'Admission\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAdmission.Installment7Date_SColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Installment8Date_S {
+                get {
+                    try {
+                        return ((string)(this[this.tableAdmission.Installment8Date_SColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Installment8Date_S\' in table \'Admission\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAdmission.Installment8Date_SColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Installment9Date_S {
+                get {
+                    try {
+                        return ((string)(this[this.tableAdmission.Installment9Date_SColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Installment9Date_S\' in table \'Admission\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAdmission.Installment9Date_SColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Installment10Date_S {
+                get {
+                    try {
+                        return ((string)(this[this.tableAdmission.Installment10Date_SColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Installment10Date_S\' in table \'Admission\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAdmission.Installment10Date_SColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableAdmission.idColumn);
             }
@@ -2107,6 +2417,126 @@ namespace apcc.admin.Reports.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetRegNoNull() {
                 this[this.tableAdmission.RegNoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInstallment6RsNull() {
+                return this.IsNull(this.tableAdmission.Installment6RsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInstallment6RsNull() {
+                this[this.tableAdmission.Installment6RsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInstallment7RsNull() {
+                return this.IsNull(this.tableAdmission.Installment7RsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInstallment7RsNull() {
+                this[this.tableAdmission.Installment7RsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInstallment8RsNull() {
+                return this.IsNull(this.tableAdmission.Installment8RsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInstallment8RsNull() {
+                this[this.tableAdmission.Installment8RsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInstallment9RsNull() {
+                return this.IsNull(this.tableAdmission.Installment9RsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInstallment9RsNull() {
+                this[this.tableAdmission.Installment9RsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInstallment10RsNull() {
+                return this.IsNull(this.tableAdmission.Installment10RsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInstallment10RsNull() {
+                this[this.tableAdmission.Installment10RsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInstallment6Date_SNull() {
+                return this.IsNull(this.tableAdmission.Installment6Date_SColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInstallment6Date_SNull() {
+                this[this.tableAdmission.Installment6Date_SColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInstallment7Date_SNull() {
+                return this.IsNull(this.tableAdmission.Installment7Date_SColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInstallment7Date_SNull() {
+                this[this.tableAdmission.Installment7Date_SColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInstallment8Date_SNull() {
+                return this.IsNull(this.tableAdmission.Installment8Date_SColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInstallment8Date_SNull() {
+                this[this.tableAdmission.Installment8Date_SColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInstallment9Date_SNull() {
+                return this.IsNull(this.tableAdmission.Installment9Date_SColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInstallment9Date_SNull() {
+                this[this.tableAdmission.Installment9Date_SColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInstallment10Date_SNull() {
+                return this.IsNull(this.tableAdmission.Installment10Date_SColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInstallment10Date_SNull() {
+                this[this.tableAdmission.Installment10Date_SColumn] = global::System.Convert.DBNull;
             }
         }
         
